@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Pmtague/api3/issues"
   },
-  "homepage": "https://github.com/Pmtague/api3#readme"
+  "homepage": "https://github.com/Pmtague/api3#readme",
+  "dependencies": {
+    "nodemon": "^1.19.2"
+  }
 }
