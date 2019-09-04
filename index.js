@@ -1,4 +1,4 @@
-const server = require('./api/server.js/index.js')
+const server = require('./api/server.js')
 
 const port = 6000
 

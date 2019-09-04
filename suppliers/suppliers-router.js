@@ -2,10 +2,24 @@ const express = require('express');
 
 const router = express.Router();
 
-router.use(express.json());
+// const router = require('express').Router();  <-- alternative to two lines above
 
-router.get('/', req, res) => {
-	res.send('get to /suppliers/')
+function uppercaser(req, res, next) {
+	const name = req.params.name;
+
+	if(name) {
+		name = name.toUpperCase();
+	}
+	res.send(`the name is: ${name}`)
 }
 
-module.exports = router
+router.use(express.json());
+
+router.get('/', (req, res) => {
+	res.send('get to /suppliers/')
+})
+router.get('/:name', uppercaser, (req, res) => {
+	res.send('get to /suppliers/${req.name}');
+});
+
+module.exports = router;
